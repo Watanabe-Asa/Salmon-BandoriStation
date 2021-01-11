@@ -11,7 +11,7 @@
 
 1.在HoshinoBot的插件目录modules下clone本项目 `git clone https://github.com/Watanabe-Asa/Salmon-BandoriStation.git`
 
-2.在 `config/__bot__.py`的模块列表里加入 `Salmon-BandoriSation`
+2.在 `config/__bot__.py`的模块列表里加入 `Salmon-BandoriStation`
 
 3.重启HoshinoBot
 
