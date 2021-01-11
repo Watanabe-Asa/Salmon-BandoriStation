@@ -6,7 +6,7 @@ import hoshino
 from hoshino import Service
 from datetime import datetime
 
-sv1 = Service('邦邦查询', enable_on_default=True)
+sv1 = Service('车站查询', enable_on_default=True)
 sv2 = Service('车站推送', enable_on_default=False)
 
 
