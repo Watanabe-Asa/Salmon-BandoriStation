@@ -10,8 +10,10 @@
 ## 使用
 
 1.在HoshinoBot的插件目录modules下clone本项目 `git clone https://github.com/Watanabe-Asa/Salmon-BandoriSation.git`
-1.在 `config/__bot__.py`的模块列表里加入 `Salmon-BandoriSation`
-1.重启HoshinoBot
+
+2.在 `config/__bot__.py`的模块列表里加入 `Salmon-BandoriSation`
+
+3.重启HoshinoBot
 
 ## 计划实现
 
@@ -22,7 +24,7 @@
 - [ ] 关键词和用户屏蔽
 - [ ] 群聊创建房间
 
-- 对于本项目的不足之处欢迎提交issue和pull request
+- 对于本项目的不足之处欢迎提交issue和pull request！
 
 ## 开源
 
