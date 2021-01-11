@@ -116,7 +116,7 @@ async def delete_group(bot, ev):
         await bot.send(ev, '关闭成功', at_sender=True)
 
 
-@sv2.scheduled_job('interval', minutes=1)
+@sv2.scheduled_job('interval', minutes=2)
 async def query_schedule():
     bot = nonebot.get_bot()
     weihu = hoshino.config.SUPERUSERS[0]
