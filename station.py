@@ -1,11 +1,10 @@
-import requests
 import json
 import asyncio
 import copy
 import nonebot
 import hoshino
 from os import path
-from hoshino import Service, priv
+from hoshino import Service, priv, aiorequests
 from datetime import datetime
 
 sv1 = Service('车站查询', enable_on_default=True)
@@ -35,7 +34,7 @@ def save_config():
 
 @sv1.on_suffix('车站人数')
 async def query_number(bot, ev):
-    resp = json.loads(requests.get('https://api.bandoristation.com/?function=get_online_number').content.decode('utf8'))
+    resp = json.loads((await (await aiorequests.get('https://api.bandoristation.com/?function=get_online_number')).content).decode('utf8'))
     status = resp['status']
     if status == 'failure':
         sv1.logger.info('Api出错，请停用插件')
@@ -48,7 +47,7 @@ async def query_number(bot, ev):
 
 @sv1.on_fullmatch(('查询房间', '查看房间', '房间查询'))
 async def query_room(bot, ev):
-    resp = json.loads(requests.get('https://api.bandoristation.com/?function=query_room_number').content.decode('utf8'))
+    resp = json.loads((await (await aiorequests.get('https://api.bandoristation.com/?function=query_room_number')).content).decode('utf8'))
     status = resp['status']
     if status == 'failure':
         sv1.logger.info('Api出错，请停用插件')
@@ -120,7 +119,7 @@ async def delete_group(bot, ev):
 async def query_schedule():
     bot = nonebot.get_bot()
     weihu = hoshino.config.SUPERUSERS[0]
-    resp = json.loads(requests.get('https://api.bandoristation.com/?function=query_room_number').content.decode('utf8'))
+    resp = json.loads((await (await aiorequests.get('https://api.bandoristation.com/?function=query_room_number')).content).decode('utf8'))
     status = resp['status']
     if status == 'failure':
         sv2.logger.info('Api出错，请停用插件')
